@@ -1,4 +1,4 @@
-// Nav that frosts once you scroll, the phone menu, and the Copy button. Nothing else.
+// Nav that frosts once you scroll, the phone menu, the Copy button and the live "Updated" lines.
 (() => {
   const nav = document.querySelector('[data-nav]');
   const toggle = nav.querySelector('.nav__toggle');
@@ -32,4 +32,28 @@
       setTimeout(() => { btn.textContent = 'Copy'; btn.classList.remove('is-done'); }, 1800);
     });
   });
+
+  // One request to GitHub for when each project last changed. Hidden if it fails or is older than four months.
+  const updated = document.querySelectorAll('[data-repo]');
+  const show = (pushed) => updated.forEach((el) => {
+    const days = Math.floor((Date.now() - Date.parse(pushed[el.dataset.repo])) / 864e5);
+    if (!(days >= 0) || days > 120) return;
+    el.textContent = days === 0 ? 'Updated today' : days === 1 ? 'Updated yesterday'
+      : days < 14 ? `Updated ${days} days ago` : days < 60 ? `Updated ${Math.round(days / 7)} weeks ago`
+      : `Updated ${Math.round(days / 30)} months ago`;
+    el.hidden = false;
+  });
+  let cached = null;
+  try { cached = JSON.parse(sessionStorage.getItem('pushed')); } catch {}
+  if (cached) show(cached);
+  else if (updated.length) {
+    fetch('https://api.github.com/users/DavidHiFi/repos?per_page=100')
+      .then((r) => (r.ok ? r.json() : Promise.reject()))
+      .then((list) => {
+        const pushed = Object.fromEntries(list.map((r) => [r.name, r.pushed_at]));
+        try { sessionStorage.setItem('pushed', JSON.stringify(pushed)); } catch {}
+        show(pushed);
+      })
+      .catch(() => {});
+  }
 })();

@@ -159,6 +159,19 @@ a:hover .arrow { transform: translateX(3px); }
 .card--link:hover .arrow { transform: translateX(3px); }
 
 /* palette strip */
+/* live "Updated ..." line, filled in from GitHub */
+.updated { display: flex; align-items: center; gap: 9px; font-size: 14px; color: var(--sub0); }
+.updated::before { content: ""; flex: none; width: 7px; height: 7px; border-radius: 50%; background: var(--green); box-shadow: 0 0 8px rgb(166 227 161 / .6); }
+.updated[hidden] { display: none; }
+
+/* about: who makes these */
+.about { display: flex; align-items: center; gap: 32px; padding: 32px; border-radius: var(--r-lg); background: var(--panel); box-shadow: inset 0 0 0 1px var(--hair); }
+.about__pic { flex: none; width: 96px; height: 96px; border-radius: 50%; box-shadow: 0 0 0 3px var(--crust), 0 0 0 5px rgb(203 166 247 / .45), 0 12px 30px -10px rgb(137 180 250 / .5); }
+.about h2 { font-size: 26px; }
+.about p { margin-top: 8px; color: var(--sub0); max-width: 62ch; }
+.about .about__facts { margin-top: 12px; font-size: 15px; }
+@media (max-width: 640px) { .about { flex-direction: column; align-items: flex-start; gap: 20px; padding: 26px 24px; } .about__pic { width: 76px; height: 76px; } }
+
 .palette { display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: center; gap: 24px 48px; margin-top: 24px; padding: 28px 32px; border-radius: var(--r-lg); background: var(--panel); box-shadow: inset 0 0 0 1px var(--hair); }
 .palette h3 { font-size: 20px; }
 .palette p { margin-top: 6px; color: var(--sub0); max-width: 52ch; }
