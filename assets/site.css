@@ -99,6 +99,7 @@ a:hover .arrow { transform: translateX(3px); }
 .pill__dot { width: 8px; height: 8px; border-radius: 50%; background: var(--green); box-shadow: 0 0 0 4px rgb(166 227 161 / .15); }
 .pill__date { color: var(--ov0); padding-left: 10px; border-left: 1px solid var(--s1); }
 .hero h1 { margin-top: 28px; max-width: 22ch; font-size: clamp(40px, 6.6vw, 80px); line-height: 1.06; letter-spacing: -.045em; text-wrap: balance; }
+.hero h1 .grad { display: block; }
 .hero .lead { margin-top: 24px; max-width: 58ch; text-wrap: pretty; }
 .actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 36px; justify-content: center; }
 
@@ -254,6 +255,7 @@ kbd { font: 500 13px/1 var(--display); padding: 3px 7px; border-radius: 6px; col
   .nav__links.is-open { opacity: 1; visibility: visible; transform: none; }
   .nav__links a { padding: 13px 14px; font-size: 16px; }
   .hero { padding-top: 44px; }
+  .hero h1 .grad { display: inline; }
   .hero__stack { margin-top: 44px; } .hero__shot { border-radius: 14px; } .hero__shot img { border-radius: 12.5px; }
   .actions { width: 100%; } .actions .btn { flex: 1 1 200px; }
   .lead { font-size: 17px; }

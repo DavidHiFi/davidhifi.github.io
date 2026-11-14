@@ -20,14 +20,15 @@
   document.querySelectorAll('[data-copy]').forEach((btn) => {
     btn.addEventListener('click', async () => {
       const text = document.getElementById(btn.dataset.copy).textContent.trim();
+      let done = true;
       try { await navigator.clipboard.writeText(text); } catch {
         const range = document.createRange();
         range.selectNodeContents(document.getElementById(btn.dataset.copy));
         getSelection().removeAllRanges(); getSelection().addRange(range);
-        return;
+        try { done = document.execCommand('copy'); } catch { done = false; }
       }
-      btn.textContent = 'Copied';
-      btn.classList.add('is-done');
+      btn.textContent = done ? 'Copied' : 'Press Ctrl+C';
+      btn.classList.toggle('is-done', done);
       setTimeout(() => { btn.textContent = 'Copy'; btn.classList.remove('is-done'); }, 1800);
     });
   });
