@@ -5,6 +5,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Page not found · DavidHiFi</title>
 <meta name="robots" content="noindex">
+<script>
+  // Some browser launches append this window option to the home page address.
+  if (/^\/%20--?hide-window-buttons\/?$/.test(location.pathname)) {
+    location.replace('/');
+  }
+</script>
 <meta name="theme-color" content="#11111b">
 <meta name="color-scheme" content="dark">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
