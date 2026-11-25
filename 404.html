@@ -6,9 +6,11 @@
 <title>Page not found · DavidHiFi</title>
 <meta name="robots" content="noindex">
 <script>
-  // Some browser launches append this window option to the home page address.
-  if (/^\/%20--?hide-window-buttons\/?$/.test(location.pathname)) {
-    location.replace('/');
+  // Some browser launches glue a window option onto the address
+  // ("/%20--hide-window-buttons"). Drop it and go to the real page.
+  var clean = location.pathname.replace(/(%20|\s)+--?[a-z][\w-]*.*$/i, '');
+  if (clean !== location.pathname) {
+    location.replace((clean || '/') + location.hash);
   }
 </script>
 <meta name="theme-color" content="#11111b">
