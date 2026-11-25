@@ -37,7 +37,7 @@ To run a copy on your own PC:
 
 - **Themes:** MochaCord, MochaSteam, MochaTidal and T3 Code Enhanced, each with a picture and what it needs.
 - **Install steps:** short steps for each theme, with a copy button for the MochaCord link.
-- **Other projects:** HaloCord, my Windows 11 mods, Blutac Launcher and the Quality Of Life mods.
+- **Other projects:** HaloCord, my Windows 11 mods, FreeDictate, Seamless Download Manager, Blutac Launcher and the Quality Of Life mods.
 - **Last updated:** each card shows when its repo last changed, read from GitHub on each visit.
 
 ### How it's built
