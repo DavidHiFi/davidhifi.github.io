@@ -11,6 +11,9 @@ One page with every theme, how to install it, and links to the rest of my work.
 <a href="https://davidhifi.github.io">
 <img src="https://img.shields.io/badge/%F0%9F%8C%90%20VISIT%20THE%20SITE-2EA043?style=for-the-badge&labelColor=161B22" alt="Visit the site" height="42">
 </a>
+<a href="https://discord.gg/PETWgTfS9x">
+<img src="https://img.shields.io/badge/JOIN%20THE%20DISCORD-5865F2?style=for-the-badge&logo=discord&logoColor=white&labelColor=161B22" alt="Join the Discord server" height="42">
+</a>
 
 <br><br>
 
